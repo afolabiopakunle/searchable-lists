@@ -4,9 +4,9 @@ let hpCharacters = [];
 
 
 searchBar.addEventListener('keyup', (e) => {
-    const searchString = e.target.value;
+    const searchString = e.target.value.toLowerCase();
     const filteredCharacters = hpCharacters.filter(character => {
-        return character.name.includes(searchString) || character.house.includes(searchString)
+        return character.name.toLowerCase().includes(searchString) || character.house.toLowerCase().includes(searchString)
     })
     console.log(filteredCharacters);
     displayCharacters(filteredCharacters)
